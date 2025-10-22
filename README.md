@@ -27,4 +27,3 @@ Built with ❤️ using **Python**, **Streamlit**, and **Hugging Face Transforme
 
 ---
 
-## 🏗️ Project Structure
