@@ -1,29 +1,31 @@
-# nlp-text-summariser
-🧠 An AI-powered text summariser that condenses long paragraphs into crisp summaries using state-of-the-art transformer models 🚀
+# Text Summarizer (FastAPI + Streamlit)
 
+Minimal summarizer using Hugging Face Transformers (BART). Includes a FastAPI endpoint and a Streamlit UI.
 
-# 🧠 Text Summariser
+## Quickstart
 
-An **AI-powered NLP project** that condenses long paragraphs into crisp, meaningful summaries using **state-of-the-art transformer models** like **BART** and **T5**.  
-Built with ❤️ using **Python**, **Streamlit**, and **Hugging Face Transformers**.
+```bash
+pip install -r requirements.txt
 
----
+# Run API
+uvicorn app:app --reload --host 0.0.0.0 --port 8000
 
-## 🚀 Features
-- 🧩 Abstractive and extractive summarization  
-- ⚡ Real-time summarization with a simple Streamlit UI  
-- 🤗 Uses pre-trained transformer models (BART, T5)  
-- 📄 Handles large text inputs easily  
-- 🧠 Clean and modular code structure  
+# Run UI
+python -m streamlit run frontend.py
+```
 
----
+## API
+- POST `/summarize`
+```json
+{
+  "text": "long text here ...",
+  "max_length": 130,
+  "min_length": 30
+}
+```
 
-## 🛠️ Tech Stack
-- Python 🐍  
-- Hugging Face Transformers 🤗  
-- PyTorch ⚙️  
-- Streamlit 🎨  
-- NLTK 🧾  
+## Notes
+- If GPU is available and torch is installed with CUDA, the pipeline will leverage it.
+- If the transformer pipeline cannot initialize (no internet or incompatible env), a naive sentence-based fallback is used.
 
----
 

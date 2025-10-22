@@ -1,0 +1,10 @@
+fastapi==0.115.2
+uvicorn==0.30.6
+pydantic==2.9.2
+streamlit==1.39.0
+requests==2.32.3
+transformers==4.44.2
+accelerate==1.0.1
+torch>=2.2.0; platform_system != "Darwin"
+sentencepiece==0.2.0
+
